@@ -9,9 +9,9 @@ Implemente los métodos indicados del esqueleto de Lista desarrollado en Teoría
 ### **Ejercicio 2** 
 Considerando la implementación de la Lista realizado en el ejercicio anterior, comparar la
 complejidad computacional contra un array en las siguientes operaciones:<br>
-- 1.Insertar al principio.<br>
-- 2.Buscar un elemento en una posición.<br>
-- 3.Determinar la cantidad de elementos.<br>
+1. Insertar al principio.<br>
+2. Buscar un elemento en una posición.<br>
+3. Determinar la cantidad de elementos.<br>
 
 ### **Ejercicio 3** 
 Implemente una Pila utilizando la Lista del ejercicio 1. A una pila se le pueden agregar
@@ -33,8 +33,8 @@ hora de recorrer la lista de principio a fin si se cuenta con un iterador?
 ### **Ejercicio 6**
 Escriba un procedimiento que dadas dos listas construya otra con los elementos comunes,
 suponiendo que: <br>
-a.- Las listas están desordenadas y la lista resultante debe quedar ordenada.<br>
-b.- Las listas están ordenadas y la lista resultante debe mantenerse ordenada.
+a). Las listas están desordenadas y la lista resultante debe quedar ordenada.<br>
+b). Las listas están ordenadas y la lista resultante debe mantenerse ordenada.
 
 ### **Ejercicio 7** 
 Escriba una función que dadas dos listas construya otra con los elementos que están en la
