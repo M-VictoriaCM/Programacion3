@@ -1,7 +1,7 @@
 package Ejercicio1;
 
 public class MySimpleLinkedList<T>{
-    private Node<T> first;
+   private Node<T> first;
     private int _size;
 
     public MySimpleLinkedList() {
@@ -26,14 +26,18 @@ public class MySimpleLinkedList<T>{
     public boolean isEmpty() {//sino esta vacia
         return this.first == null;
     }
-
+    
     public T get(int index) {
-        index =0;
-        Node<T>tmp= first;
-        while(tmp !=null){
-            if (tmp == first.getInfo()){
+        int i=0;
+        if(index < size()){
+            Node<T>tmp= first;
+            while( i< index){
+                tmp = tmp.getNext();
+                i++;
             }
-        }
+            return tmp.getInfo();
+                
+        }return null;
     }
 
     public int size() {
@@ -48,10 +52,19 @@ public class MySimpleLinkedList<T>{
     }
 
     @Override
-    public String toString() {
+    /*public String toString() {
         return "MySimpleLinkedList{" +
                 "first=" + first +
                 ", _size=" + _size +
                 '}';
+    }*/
+    public String toString(){
+        Node<T> tmp =this.first;
+        String lista = "";
+            while(tmp !=null){ 
+                lista = lista + tmp.getInfo().toString();
+                tmp=tmp.getNext();
+            }
+        return lista;
     }
 }
