@@ -1,9 +1,10 @@
 package Ejercicio6;
 
-public class MySimpleLinkedList<T> {
-    private Node<T> first;
-    private int size;
-    private Node<T> cursor;
+public class MySimpleLinkedList<T>{
+    protected Node<T> first;
+    protected int size;
+    protected Node<T> cursor;
+
 
     public MySimpleLinkedList(){
         this.first=null;
@@ -27,33 +28,64 @@ public class MySimpleLinkedList<T> {
         return this.size;
     }
     public T get(int index){ //muestra que informacion hay dentro del nodo
-        if((-1 < index) && (index < size)){
-            int contador =0;
-            Node<T>cursor = first;
+        int contador=0;
+        if(index < this.size){
+            Node<T> tmp = this.first;
             while(contador < index){
-                cursor.getNext();
-                contador ++;
+                tmp =tmp.getNext();
+                contador++;
             }
-            return cursor.getInfo();
+            return tmp.getInfo();
+        }else{
+            return null;
         }
-        return null;
     }
-    /*public void insertInOrden(T info){
-        if(Comparable<T>) info.compareTo(first.getInfo()) == -1){
-
-        }
-    }*/
     public boolean isEmpty() {
         return this.first == null;
     }
+
+    public void iniciarCursor(){
+        this.cursor= this.first;//O(1)
+    }
+    public T getInfoCursor(){
+        return this.cursor.getInfo();
+    }
+    public void avanzarCursor(){
+        this.cursor= this.cursor.getNext();
+    }
+    public boolean cursorLlegoAlFinal(){
+        return this.cursor == null;
+    }
+
+  public MySimpleLinkedList<T> ordenar(MySimpleLinkedList<T> lista){
+        MySimpleLinkedList<T> listaAux= new MySimpleLinkedList<>();
+        if(!this.isEmpty()){
+            if(!lista.isEmpty()){
+                Node<T> ele= this.first;
+                while (ele!=null){
+                    Node<T> ele2= lista.first;
+                    while (ele2!=null){
+                        if(ele.compareTo(ele2)==0){
+                            listaAux.insertFront(ele.getInfo());
+                        }
+                        ele2=ele2.getNext();
+                    }
+                    ele=ele.getNext();
+                }
+
+            }
+        }
+
+        return listaAux;
+  }
     @Override
     public String toString(){
         String lista ="";
         Node<T> tmp = this.first;
         while(tmp != null){
-            lista += tmp.getInfo().toString();
+            lista = lista + tmp.getInfo().toString();
             if(tmp.getNext() != null){
-                lista += "->";
+                lista = lista +"->";
             }
             tmp= tmp.getNext();
         }
@@ -61,3 +93,4 @@ public class MySimpleLinkedList<T> {
     }
 
 }
+
