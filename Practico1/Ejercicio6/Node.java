@@ -1,6 +1,6 @@
 package Ejercicio6;
 
-public class Node<T>{
+public class Node<T> {
     private T info;
     private Node<T> next;
 
@@ -26,5 +26,12 @@ public class Node<T>{
     }
     public void setNext(Node<T> next){
         this.next = next;
+    }
+
+    public int compareTo(Node<T> ele2) {
+        if (this.getInfo()==ele2.getInfo()){
+            return 0;
+        }
+        return 1;
     }
 }
