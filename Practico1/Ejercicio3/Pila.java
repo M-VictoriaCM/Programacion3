@@ -25,10 +25,18 @@ public class Pila<T> extends MySimpleLinkedList<T>  {
         Pila<T>tmp = new  Pila<T>();
         while(this.size()>0){
             tmp.insertFront(this.extractFront());
-            this.first= tmp.first;
         }
+        this.first= tmp.first;
 
     }
+    /*public void reverse(){
+       Pila<T> tmp = new Pila<T>();
+       while(!this.isEmpty()){
+           T info= this.pop();
+           tmp.push(info);
+       }
+       this.first= tmp.first;
+   }*/
     public String toString(){
         String pila=" ";
         Node<T>tmp = this.first;
