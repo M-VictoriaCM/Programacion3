@@ -139,7 +139,9 @@ public class TreeWithNode {
         return _tmp.getValue();
     }
 
-
+	public void printInOrden(){
+        this.inOrden(this.root);
+    }
     //Ordenamientos
     private void inOrden(TreeNode _root) {
         if(_root != null){
@@ -148,8 +150,9 @@ public class TreeWithNode {
             inOrden(_root.getRight());
         }
     }
-    public void printInOrden(){
-        this.inOrden(this.root);
+    
+	public void printPosOrden(){
+        this.posOrden(this.root);
     }
     private void posOrden(TreeNode _root) {
         if(_root != null){
@@ -158,8 +161,8 @@ public class TreeWithNode {
             System.out.print(_root.getValue()+" ");
         }
     }
-    public void printPosOrden(){
-        this.posOrden(this.root);
+    public void printPreOrden(){
+        this.preOrden(this.root);
     }
     private void preOrden(TreeNode _root) {
         if(_root != null){
@@ -168,7 +171,5 @@ public class TreeWithNode {
             preOrden(_root.getRight());
         }
     }
-    public void printPreOrden(){
-        this.preOrden(this.root);
-    }
+    
 }
